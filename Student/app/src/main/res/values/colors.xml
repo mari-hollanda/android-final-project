@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="performance_main_primary">#A2514B</color>
+    <color name="performance_main_light">#D8B4B2</color>
+    <color name="performance_main_dark">#DBA39B</color>
+    <color name="performance_main_accent">#4B9CA2</color>
+    <color name="performance_main_accent_light">#83C5BE</color>
+    <color name="performance_main_accent_dark">#2A9D8F</color>
+    <color name="eerie_black">#222222</color>
+    <color name="cultured">#F4F4F4</color>
+</resources>

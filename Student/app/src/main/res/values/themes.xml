@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.StudentApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/performance_main_primary</item>
+        <item name="colorPrimaryVariant">@color/performance_main_dark</item>
+        <item name="colorOnPrimary">@color/cultured</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/performance_main_accent</item>
+        <item name="colorSecondaryVariant">@color/performance_main_accent_dark</item>
+        <item name="colorOnSecondary">@color/eerie_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.StudentApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.StudentApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.StudentApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

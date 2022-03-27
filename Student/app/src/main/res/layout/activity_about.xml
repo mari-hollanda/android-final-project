@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="30dp"
+    tools:context=".ui.about.AboutActivity">
+
+    <!-- This layout was made by Mariana Alkabalan. All credits reserved. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="@string/contact_info"
+            android:textAlignment="center"
+            android:textColor="#4B9CA2"
+            android:textSize="30sp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="?android:attr/listDivider" />
+
+        <ImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_name_logo"
+            android:paddingTop="30dp"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/textViewName1"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:paddingTop="50dp"
+            android:text="@string/learning_manager"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewName2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:text="@string/student_name_marianna_hollanda"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:text="@string/email_mhollandacampos_hollandcollege_com"
+            android:textAlignment="center"
+            android:textSize="19sp" />
+
+        <!--        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:paddingTop="26dp"
+            android:text="Click to see our location"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMap"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="#DBA39B"
+            android:elevation="8dp"
+            android:src="@android:drawable/ic_dialog_map" />-->
+    </LinearLayout>
+
+</FrameLayout>

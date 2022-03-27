@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="info.hccis.student.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="info.hccis.student.ui.about.AboutActivity"
+        android:label="@string/about"
+        tools:layout="@layout/activity_about" />
+
+    <fragment
+        android:id="@+id/nav_student"
+        android:name="info.hccis.student.ui.student.AddStudentsFragment"
+        android:label="@string/add_student"
+        tools:layout="@layout/fragment_add_student">
+        <action
+            android:id="@+id/action_nav_student_to_nav_student_list"
+            app:destination="@id/nav_student_list" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_student_list"
+        android:name="info.hccis.student.ui.student.ViewStudentsFragment"
+        android:label="@string/student_list"
+        tools:layout="@layout/fragment_view_students">
+        <action
+            android:id="@+id/action_nav_student_list_to_nav_student"
+            app:destination="@id/nav_student" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="info.hccis.student.MapFragment"
+        android:label="@string/map"
+        tools:layout="@layout/fragment_map" />
+
+</navigation>

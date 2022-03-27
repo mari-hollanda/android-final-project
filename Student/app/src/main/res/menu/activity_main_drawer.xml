@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/general">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_home"
+                        android:icon="@drawable/ic_home"
+                        android:title="@string/home"/>
+                </group>
+            </menu>
+        </item>
+        <item android:title="@string/student">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_student"
+                        android:icon="@drawable/ic_add_student"
+                        android:title="@string/add_student" />
+                    <item
+                        android:id="@+id/nav_student_list"
+                        android:icon="@drawable/ic_list"
+                        android:title="@string/student_list" />
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="@string/other">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_settings"
+                        android:icon="@drawable/ic_tools"
+                        android:title="@string/settings" />
+                    <item
+                        android:id="@+id/nav_social_media"
+                        android:icon="@drawable/ic_socialmedia"
+                        android:title="@string/social_media"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>
