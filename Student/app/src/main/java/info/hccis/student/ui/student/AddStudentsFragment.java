@@ -19,6 +19,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 
 import info.hccis.student.R;
+import info.hccis.student.StudentFirebase;
 import info.hccis.student.databinding.FragmentAddStudentBinding;
 import info.hccis.student.entity.Student;
 import info.hccis.student.entity.StudentRepository;
@@ -89,7 +90,8 @@ public class AddStudentsFragment extends Fragment {
                     intent.setAction("info.hccis.student.student");
                     lbm.sendBroadcast(intent);
                     getActivity().sendBroadcast(intent);
-
+                    StudentFirebase dbase = new StudentFirebase();
+                    dbase.addStudentDatabase(student);
                     NavHostFragment.findNavController(AddStudentsFragment.this)
                             .navigate(R.id.action_nav_student_to_nav_student_list, bundle);
                 } catch (Exception e) {

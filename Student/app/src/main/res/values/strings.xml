@@ -39,5 +39,7 @@
     <string name="student">Student</string>
     <string name="map">Map</string>
     <string name="send_message">Send Message</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sign_in">Sign In</string>
 
 </resources>

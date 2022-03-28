@@ -18,12 +18,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.room.Room;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import info.hccis.student.api.ApiWatcher;
 import info.hccis.student.dao.MyAppDatabase;
 import info.hccis.student.databinding.ActivityMainBinding;
 import info.hccis.student.receiver.StudentBroadcastReceiver;
 import info.hccis.student.ui.about.AboutActivity;
+import info.hccis.student.ui.googlesignin.GoogleSignInActivity;
 import info.hccis.student.ui.settings.SettingsActivity;
 import info.hccis.student.ui.socialmedia.SocialMediaActivity;
 
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
         //registerReceiver(exampleReceiver, filter);
         LocalBroadcastManager lbm = LocalBroadcastManager.getInstance(this);
         lbm.registerReceiver(studentBroadcastReceiver, filter);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+        myRef.setValue("Added to Firebase");
     }
 
     @Override
@@ -127,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_sendmessage) {
             Log.d("MainActivity MHCP", "Option selected Send Message");
             Intent intent = new Intent(this, SocialMediaActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_signin) {
+            Log.d("MainActivity MHCP", "Option selected Gooogle Sign In");
+            Intent intent = new Intent(this, GoogleSignInActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_about) {

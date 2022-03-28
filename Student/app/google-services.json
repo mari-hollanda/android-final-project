@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716999246733",
+    "project_id": "student-84834",
+    "storage_bucket": "student-84834.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716999246733:android:56d5ac6f3ca855f87b73c4",
+        "android_client_info": {
+          "package_name": "info.hccis.student"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716999246733-2f5cg6oaaq4a9hstkk226sacniiacck0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3GiDpuVWys5D62B5V7nASpc4CCVs_vRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716999246733-2f5cg6oaaq4a9hstkk226sacniiacck0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
