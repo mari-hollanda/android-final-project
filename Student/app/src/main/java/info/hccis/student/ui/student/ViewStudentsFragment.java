@@ -54,7 +54,7 @@ public class ViewStudentsFragment extends Fragment {
             NotificationApplication.setContext(context);
             NotificationUtil.sendNotification("Students Data Update", message, activity, MainActivity.class);
         } catch (Exception e) {
-            Log.d("mhcp api", "Exception occurred when notifying. " + e.getMessage());
+            Log.d("mhcp notification", "Exception occurred when notifying. " + e.getMessage());
         }
     }
 

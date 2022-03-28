@@ -16,7 +16,7 @@ public class SocialMediaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_socialmedia);
+        setContentView(R.layout.activity_sendmessage);
 
         EditText editTextMessage = findViewById(R.id.editTextMessage);
 

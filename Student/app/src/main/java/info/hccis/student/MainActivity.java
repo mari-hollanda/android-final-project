@@ -25,6 +25,7 @@ import info.hccis.student.databinding.ActivityMainBinding;
 import info.hccis.student.receiver.StudentBroadcastReceiver;
 import info.hccis.student.ui.about.AboutActivity;
 import info.hccis.student.ui.settings.SettingsActivity;
+import info.hccis.student.ui.socialmedia.SocialMediaActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,29 +53,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-/*        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);*/
-
-        //************************************************************************************
-        // Listener for FAB here
-        //************************************************************************************
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_student,R.id.nav_student_list,
-                R.id.nav_social_media)
+                R.id.nav_home, R.id.nav_student,R.id.nav_student_list)
                 .setDrawerLayout(drawer)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -135,9 +119,14 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings || id == R.id.nav_settings) {
+        if (id == R.id.action_settings) {
             Log.d("MainActivity MHCP", "Option selected Settings");
             Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_sendmessage) {
+            Log.d("MainActivity MHCP", "Option selected Send Message");
+            Intent intent = new Intent(this, SocialMediaActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.action_about) {

@@ -9,23 +9,26 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="Send us a message!"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="112dp" />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextMessage"
-        android:layout_width="372dp"
-        android:layout_height="165dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="405dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="90dp"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="@id/buttonSendMessage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -33,12 +36,13 @@
         android:id="@+id/buttonSendMessage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="250dp"
         android:text="@string/send_message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

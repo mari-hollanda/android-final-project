@@ -7,6 +7,11 @@
         android:title="@string/settings"
         app:showAsAction="never" />
 
+    <item android:id="@+id/action_sendmessage"
+        android:orderInCategory="100"
+        android:title="@string/send_message"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/action_about"
         android:orderInCategory="100"

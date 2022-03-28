@@ -28,20 +28,5 @@
                 </group>
             </menu>
         </item>
-
-        <item android:title="@string/other">
-            <menu>
-                <group android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/nav_settings"
-                        android:icon="@drawable/ic_tools"
-                        android:title="@string/settings" />
-                    <item
-                        android:id="@+id/nav_social_media"
-                        android:icon="@drawable/ic_socialmedia"
-                        android:title="@string/social_media"/>
-                </group>
-            </menu>
-        </item>
     </group>
 </menu>
