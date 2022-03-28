@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/AddLessonFragment">
+
+    <fragment
+        android:id="@+id/AddLessonFragment"
+        android:name="info.hccis.tennislessons.AddLessonFragment"
+        android:label="@string/labelAddLesson"
+        tools:layout="@layout/fragment_add_lesson">
+
+        <action
+            android:id="@+id/action_AddLessonFragment_to_ViewLessonFragment"
+            app:destination="@id/ViewLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ViewLessonFragment"
+        android:name="info.hccis.tennislessons.ViewLessonFragment"
+        android:label="@string/labelViewLesson"
+        tools:layout="@layout/fragment_view_lesson">
+
+        <action
+            android:id="@+id/action_ViewLessonFragment_to_AddLessonFragment"
+            app:destination="@id/AddLessonFragment" />
+    </fragment>
+</navigation>

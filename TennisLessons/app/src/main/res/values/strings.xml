@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TennisLessons</string>
+    <string name="labelGroupSize">How many are in the group? (1,2,3,4)</string>
+    <string name="labelMember">Are you a member? (Y/N)</string>
+    <string name="labelHours">How many hours do you want for your lesson?</string>
+    <string name="labelSubmit">Submit</string>
+    <string name="labelAddLesson">Add Lesson</string>
+    <string name="labelViewLesson">View Lesson</string>
+    <string name="action_settings">Settings</string>
+</resources>

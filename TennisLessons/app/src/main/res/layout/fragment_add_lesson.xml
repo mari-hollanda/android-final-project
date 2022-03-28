@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddLessonFragment">
+
+    <TextView
+        android:id="@+id/textViewCost"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSubmit"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSubmit"
+        app:layout_constraintStart_toStartOf="@+id/buttonSubmit"
+        app:layout_constraintTop_toBottomOf="@+id/editTextHours" />
+
+    <EditText
+        android:id="@+id/editTextGroupNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMember"
+        app:layout_constraintEnd_toEndOf="@+id/textViewMember"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/textViewMember"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGroupNumber"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewGroupNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="@string/labelGroupSize"
+        app:layout_constraintBottom_toTopOf="@+id/editTextGroupNumber"
+        app:layout_constraintEnd_toEndOf="@+id/editTextGroupNumber"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="@+id/editTextGroupNumber"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewCost"
+        app:layout_constraintEnd_toEndOf="@+id/textViewCost"
+        app:layout_constraintStart_toStartOf="@+id/textViewCost"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHours"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelHours"
+        app:layout_constraintBottom_toTopOf="@+id/editTextHours"
+        app:layout_constraintEnd_toEndOf="@+id/editTextHours"
+        app:layout_constraintStart_toStartOf="@+id/editTextHours"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMember" />
+
+    <EditText
+        android:id="@+id/editTextMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHours"
+        app:layout_constraintEnd_toEndOf="@+id/textViewHours"
+        app:layout_constraintStart_toStartOf="@+id/textViewHours"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMember"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelMember"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMember"
+        app:layout_constraintEnd_toEndOf="@+id/editTextMember"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="@+id/editTextMember"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGroupNumber" />
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="211dp"
+        android:text="@string/labelSubmit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCost" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
