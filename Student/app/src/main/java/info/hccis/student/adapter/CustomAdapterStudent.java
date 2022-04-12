@@ -1,21 +1,26 @@
 package info.hccis.student.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import info.hccis.student.R;
 import info.hccis.student.entity.Student;
 
+/**
+ * Student Custom Adapter
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class CustomAdapterStudent extends RecyclerView.Adapter<CustomAdapterStudent.StudentViewHolder> {
 
     private List<Student> studentArrayList;
@@ -33,11 +38,11 @@ public class CustomAdapterStudent extends RecyclerView.Adapter<CustomAdapterStud
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-        String fName = "" + studentArrayList.get(position).getFName();
-        String lName = "" + studentArrayList.get(position).getLName();
-        String pNum = "" + studentArrayList.get(position).getPNum();
-        String email = "" + studentArrayList.get(position).getEMail();
-        String program = "" + studentArrayList.get(position).getProg();
+        String fName = "" + studentArrayList.get(position).getFirstName();
+        String lName = "" + studentArrayList.get(position).getLastName();
+        String pNum = "" + studentArrayList.get(position).getPhoneNumber();
+        String email = "" + studentArrayList.get(position).getEmailAddress();
+        String program = "" + studentArrayList.get(position).getProgramCode();
         holder.textViewStudentFirstNameListItem.setText(fName);
         holder.textViewStudentLastNameListItem.setText(lName);
         holder.textViewPhoneNumberListItem.setText(pNum);

@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/fragment_add_student_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="@string/id"
-            android:inputType="number"
-            android:minHeight="48dp" />
+<!--        <EditText-->
+<!--            android:id="@+id/fragment_add_student_id"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:hint="@string/id"-->
+<!--            android:inputType="number"-->
+<!--            android:minHeight="48dp" />-->
 
         <EditText
             android:id="@+id/fragment_add_student_firstName"

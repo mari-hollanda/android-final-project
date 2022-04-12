@@ -1,28 +1,29 @@
 package info.hccis.student.entity;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+/**
+ * Student Entity
+ *
+ * @author cis2250
+ * @since 2021
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 @Entity(tableName = "student")
 public class Student implements Serializable {
-
-    //The names of the variables might not match what is in the DB. This is for backwards compatibility (report).
     @PrimaryKey(autoGenerate = true)
     private int id;
-    private String fName;
-    private String lName;
-    private String pNum;
-    private String eMail;
-    private Integer prog;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String emailAddress;
+    private Integer programCode;
 
     public Student() {
-    }
-
-    public Student(Integer id) {
-        this.id = id;
     }
 
     public int getId() {
@@ -33,45 +34,47 @@ public class Student implements Serializable {
         this.id = id;
     }
 
-    public String getFName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPNum() {
-        return pNum;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPNum(String pNum) {
-        this.pNum = pNum;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getEMail() {
-        return eMail;
+    public String getEmailAddress() {
+        return emailAddress;
     }
 
-    public void setEMail(String eMail) {
-        this.eMail = eMail;
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
     }
 
-    public Integer getProg() {
-        return prog;
+    public Integer getProgramCode() {
+        return programCode;
     }
 
-    public void setProg(Integer prog) {
-        this.prog = prog;
+    public void setProgramCode(Integer programCode) {
+        this.programCode = programCode;
     }
 
-
+    public Student(Integer id) {
+        this.id = id;
+    }
 }

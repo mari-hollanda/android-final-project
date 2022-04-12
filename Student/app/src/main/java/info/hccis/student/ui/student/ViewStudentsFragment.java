@@ -27,6 +27,14 @@ import info.hccis.student.entity.StudentViewModel;
 import info.hccis.student.util.NotificationApplication;
 import info.hccis.student.util.NotificationUtil;
 
+/**
+ * View Students Fragment
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class ViewStudentsFragment extends Fragment {
 
     private static Context context;

@@ -25,6 +25,9 @@ import kotlin.Throws
  * @since 20220118
  * @modified by mariannahollanda
  * @since 20220119
+ * @modified 20220328
+ * @author mariannahollanda
+ * Modified the program language from Java to Kotlin.
  */
 class AddLessonFragment : Fragment() {
     private var binding: FragmentAddLessonBinding? = null
@@ -62,6 +65,9 @@ class AddLessonFragment : Fragment() {
      * @since 20220118
      * @modified by mariannahollanda
      * @since 20220119
+     * @modified 20220328
+     * @author mariannahollanda
+     * Modified the program language from Java to Kotlin.
      */
     @Throws(Exception::class)
     fun calculate() {

@@ -6,28 +6,30 @@ import java.util.List;
 
 import info.hccis.student.MainActivity;
 
+/**
+ * Student Content
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class StudentContent {
-    public static void reloadStudentsInRoom(List<Student> students)
-    {
+    public static void reloadStudentsInRoom(List<Student> students) {
         MainActivity.getMyAppDatabase().studentDAO().deleteAll();
-        for(Student current : students)
-        {
+        for (Student current : students) {
             MainActivity.getMyAppDatabase().studentDAO().insert(current);
         }
-        Log.d("MHCP Room","loading students into Room");
+        Log.d("MHCP Room", "loading students into Room");
     }
 
-    public static List<Student> getStudentFromRoom()
-    {
-        Log.d("MHCP Room","Loading students from Room");
-
+    public static List<Student> getStudentFromRoom() {
+        Log.d("MHCP Room", "Loading students from Room");
         List<Student> studentBack = MainActivity.getMyAppDatabase().studentDAO().selectAllStudents();
-        Log.d("MHCP Room","Number of students loaded from Room: " + studentBack.size());
-        for(Student current : studentBack)
-        {
-            Log.d("MHCP Room",current.toString());
+        Log.d("MHCP Room", "Number of students loaded from Room: " + studentBack.size());
+        for (Student current : studentBack) {
+            Log.d("MHCP Room", current.toString());
         }
         return studentBack;
     }
-
 }

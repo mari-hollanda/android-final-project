@@ -1,6 +1,5 @@
 package info.hccis.tennislessons.bo
 
-import info.hccis.tennislessons.bo.TennisLessonsBO
 import java.io.Serializable
 import java.util.*
 
@@ -9,6 +8,9 @@ import java.util.*
  *
  * @author mariannahollanda
  * @since 20220119
+ * @modified 20220328
+ * @author mariannahollanda
+ * Modified the program language from Java to Kotlin.
  */
 class TennisLessonsBO(var groupNumber: Int, var isMemberYN: String, var hours: Int) : Serializable {
     var isMember = false
@@ -19,6 +21,9 @@ class TennisLessonsBO(var groupNumber: Int, var isMemberYN: String, var hours: I
      *
      * @author mariannahollanda
      * @since 20220119
+     * @modified 20220328
+     * @author mariannahollanda
+     * Modified the program language from Java to Kotlin.
      */
     val information: Unit
         get() {
@@ -41,6 +46,9 @@ class TennisLessonsBO(var groupNumber: Int, var isMemberYN: String, var hours: I
      * @return
      * @author mariannahollanda
      * @since 20220119
+     * @modified 20220328
+     * @author mariannahollanda
+     * Modified the program language from Java to Kotlin.
      */
     fun calculateCost(): Double {
         when (isMemberYN) {

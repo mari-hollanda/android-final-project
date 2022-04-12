@@ -19,6 +19,9 @@ import info.hccis.tennislessons.databinding.FragmentViewLessonBinding
  * @since 20220118
  * @modified by mariannahollanda
  * @since 20220119
+ * @modified 20220328
+ * @author mariannahollanda
+ * Modified the program language from Java to Kotlin.
  */
 class ViewLessonFragment : Fragment() {
     private var binding: FragmentViewLessonBinding? = null

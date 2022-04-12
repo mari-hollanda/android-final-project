@@ -11,6 +11,14 @@ import androidx.preference.PreferenceManager;
 
 import info.hccis.student.R;
 
+/**
+ * Settings Activity
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class SettingsActivity extends AppCompatActivity {
 
     @Override

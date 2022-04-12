@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import info.hccis.tennislessons.R
 import androidx.navigation.ui.NavigationUI
 import info.hccis.tennislessons.databinding.ActivityMainBinding
 
@@ -19,6 +17,9 @@ import info.hccis.tennislessons.databinding.ActivityMainBinding
  * @modified by mariannahollanda
  * @since 20220118
  * @since 20220119
+ * @modified 20220328
+ * @author mariannahollanda
+ * Modified the program language from Java to Kotlin.
  */
 class MainActivity : AppCompatActivity() {
     private var appBarConfiguration: AppBarConfiguration? = null

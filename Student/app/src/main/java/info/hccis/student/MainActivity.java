@@ -1,12 +1,16 @@
 package info.hccis.student;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,6 +29,7 @@ import info.hccis.student.api.ApiWatcher;
 import info.hccis.student.dao.MyAppDatabase;
 import info.hccis.student.databinding.ActivityMainBinding;
 import info.hccis.student.receiver.StudentBroadcastReceiver;
+import info.hccis.student.service.MyForegService;
 import info.hccis.student.ui.about.AboutActivity;
 import info.hccis.student.ui.googlesignin.GoogleSignInActivity;
 import info.hccis.student.ui.settings.SettingsActivity;
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         return myAppDatabase;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +96,12 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
         myRef.setValue("Added to Firebase");
+
+        //Foreground Code with Broad Cast Receiver
+        if(!foregroundServiceRunning()) {
+            Intent serviceIntent = new Intent(this, MyForegService.class);
+            startForegroundService(serviceIntent);
+        }
     }
 
     @Override
@@ -154,5 +166,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public boolean foregroundServiceRunning(){
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for(ActivityManager.RunningServiceInfo service: activityManager.getRunningServices(Integer.MAX_VALUE)) {
+            if(MyForegService.class.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

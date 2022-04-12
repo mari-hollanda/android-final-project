@@ -22,9 +22,16 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Student API Watcher
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class ApiWatcher extends Thread {
 
-   // public static final String API_BASE_URL = "http://localhost:8081/api/StudentService/";
     public static final String API_BASE_URL = "http://10.0.2.2:8081/api/StudentService/";
 
     private int lengthLastCall = -1;
@@ -49,23 +56,17 @@ public class ApiWatcher extends Thread {
 
                     @Override
                     public void onResponse(Call<List<Student>> call, Response<List<Student>> response) {
-
                         Log.d("MHCP api", "found ticket order view model. size=" + studentViewModel.getStudents().size());
-
-
                         if (!response.isSuccessful()) {
                             Log.d("MHCP api", "MHCP not successful response from rest for ticket orders Code=" + response.code());
 
                             loadFromRoomIfPreferred(studentViewModel);
                             lengthLastCall = -1; //Indicate couldn't load from api will trigger reload next time
-
                         } else {
                             ArrayList<Student> studentsTemp = new ArrayList(response.body()); //note gson will be used implicitly
                             int lengthThisCall = studentsTemp.size();
 
                             Log.d("MHCP api", "back from api, size=" + lengthThisCall);
-
-
                             if (lengthLastCall == -1) {
                                 lengthLastCall = lengthThisCall;
                                 studentViewModel.setStudents(studentsTemp); //Will addAll
@@ -103,13 +104,11 @@ public class ApiWatcher extends Thread {
 
                     @Override
                     public void onFailure(Call<List<Student>> call, Throwable t) {
-
                         Log.d("mhcp api", "api call failed");
                         Log.d("mhcp api", t.getMessage());
 
                         lengthLastCall = -1; //Indicate couldn't load from api will trigger reload next time
                         loadFromRoomIfPreferred(studentViewModel);
-
                     }
                 });
 
@@ -125,18 +124,21 @@ public class ApiWatcher extends Thread {
 
     /**
      * Check the shared preferences and load from the db if the setting is set to do such a thing.
+     *
      * @param studentViewModel
-     * @since 20220211
      * @author BJM
+     * @since 20220211
+     * @modified 20220303
+     * @author mariannahollanda
      */
     public void loadFromRoomIfPreferred(StudentViewModel studentViewModel) {
-        Log.d("MHCP room","Check to see if should load from room");
+        Log.d("MHCP room", "Check to see if should load from room");
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity.getApplicationContext());
         boolean loadFromRoom = sharedPref.getBoolean(activity.getString(R.string.preference_load_from_room), true);
-        Log.d("MHCP room","Load from Room="+loadFromRoom);
+        Log.d("MHCP room", "Load from Room=" + loadFromRoom);
         if (loadFromRoom) {
             List<Student> testList = MainActivity.getMyAppDatabase().studentDAO().selectAllStudents();
-            Log.d("MHCP room","Obtained ticket orders from the db: "+testList.size());
+            Log.d("MHCP room", "Obtained ticket orders from the db: " + testList.size());
             studentViewModel.setStudents(testList); //Will add all ticket orders
 
             activity.runOnUiThread(new Runnable() {

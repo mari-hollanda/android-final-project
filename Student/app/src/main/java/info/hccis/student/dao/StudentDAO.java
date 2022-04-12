@@ -8,6 +8,12 @@ import java.util.List;
 
 import info.hccis.student.entity.Student;
 
+/**
+ * Student DAO
+ *
+ * @author mariannahollanda
+ * @since 20220303
+ */
 @Dao
 public interface StudentDAO {
     @Insert

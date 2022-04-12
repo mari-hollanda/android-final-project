@@ -23,21 +23,27 @@ import com.google.android.gms.tasks.Task;
 import info.hccis.student.MainActivity;
 import info.hccis.student.R;
 
+/**
+ * Google SignIn Activity
+ *
+ * @author cis2250
+ * @since 2022
+ * @author mariannahollanda
+ * @since 20220303
+ */
 public class GoogleSignInActivity extends AppCompatActivity {
-
     private static int RC_SIGN_IN = 100;
     GoogleSignInClient mGoogleSignInClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_google_sign_in);
-
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
-
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
@@ -97,7 +103,7 @@ public class GoogleSignInActivity extends AppCompatActivity {
                 Uri personPhoto = acct.getPhotoUrl();
 
                 //Toast to display Information
-                Toast.makeText(this, "Welcome: "+personName+" ("+personEmail+")", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Welcome: " + personName + " (" + personEmail + ")", Toast.LENGTH_LONG).show();
 
                 //Send the user to the MainActivity
                 startActivity(new Intent(GoogleSignInActivity.this, MainActivity.class));
@@ -108,7 +114,7 @@ public class GoogleSignInActivity extends AppCompatActivity {
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.d("signInResult: failed ",e.toString());
+            Log.d("signInResult: failed ", e.toString());
         }
     }
 
@@ -121,5 +127,4 @@ public class GoogleSignInActivity extends AppCompatActivity {
                     }
                 });
     }
-
 }

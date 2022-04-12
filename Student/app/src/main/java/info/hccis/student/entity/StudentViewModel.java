@@ -5,6 +5,14 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Student View Model
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class StudentViewModel extends ViewModel {
 
     private List<Student> students = new ArrayList();

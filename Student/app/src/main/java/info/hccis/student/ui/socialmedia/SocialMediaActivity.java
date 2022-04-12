@@ -11,6 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import info.hccis.student.R;
 import info.hccis.student.util.CisSocialMediaUtil;
 
+/**
+ * Social Media Activity
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class SocialMediaActivity extends AppCompatActivity {
 
     @Override
@@ -26,17 +34,11 @@ public class SocialMediaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String message = editTextMessage.getText().toString();
-
                 //******************************************************************************
                 //Social Media
                 //******************************************************************************
-
                 startActivity(CisSocialMediaUtil.shareOnSocialMedia(thisActivity, CisSocialMediaUtil.PACKAGE_TWITTER, "Student", message));
-
             }
         });
-
-
-
     }
 }

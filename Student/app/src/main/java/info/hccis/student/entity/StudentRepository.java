@@ -7,6 +7,14 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Student Repository
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class StudentRepository {
 
     private static StudentRepository instance;
@@ -30,12 +38,10 @@ public class StudentRepository {
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
         jsonStudentApi = retrofit.create(JsonStudentApi.class);
     }
 
     public JsonStudentApi getStudentService() {
         return jsonStudentApi;
     }
-
 }

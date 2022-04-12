@@ -15,6 +15,12 @@ import com.synnapps.carouselview.ImageListener;
 
 import info.hccis.student.R;
 
+/**
+ * Home Fragment
+ *
+ * @author mariannahollanda
+ * @since 20220303
+ */
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -32,6 +38,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
     ImageListener imageListener = new ImageListener() {
         @Override
         public void setImageForPosition(int position, ImageView imageView) {

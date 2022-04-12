@@ -16,10 +16,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import info.hccis.student.R;
-import info.hccis.student.StudentFirebase;
+import info.hccis.student.firebase.StudentFirebase;
 import info.hccis.student.databinding.FragmentAddStudentBinding;
 import info.hccis.student.entity.Student;
 import info.hccis.student.entity.StudentRepository;
@@ -29,6 +27,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Add Student Fragment
+ *
+ * @author cis2250
+ * @since 2022
+ * @modified 20220303
+ * @author mariannahollanda
+ */
 public class AddStudentsFragment extends Fragment {
 
     public static final String KEY = "info.hccis.student.student";
@@ -44,7 +50,7 @@ public class AddStudentsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.d("AddStudentFragment MHCP", "onCreateView triggered");
         binding = FragmentAddStudentBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -77,10 +83,6 @@ public class AddStudentsFragment extends Fragment {
                         }
                     });
 
-/*                    Snackbar.make(view, "Have added a student. Want to add this new student to the database. " +
-                            "How should we handle this?", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();*/
-
                     long eventID = ContentProviderUtil.createEvent(getActivity(), student.toString());
                     Toast.makeText(getActivity(), "Calendar Event Created (" + eventID + ")", Toast.LENGTH_SHORT);
                     Log.d("MHCP Calendar", "Calendar Event Created (" + eventID + ")");
@@ -95,7 +97,7 @@ public class AddStudentsFragment extends Fragment {
                     NavHostFragment.findNavController(AddStudentsFragment.this)
                             .navigate(R.id.action_nav_student_to_nav_student_list, bundle);
                 } catch (Exception e) {
-                   Log.d("AddStudentFragment MHCP", "Error submitting: " + e.getMessage());
+                    Log.d("AddStudentFragment MHCP", "Error submitting: " + e.getMessage());
                 }
             }
         });
@@ -109,19 +111,17 @@ public class AddStudentsFragment extends Fragment {
         Log.d("MHCP-MainActivity", "Email Address entered =" + binding.fragmentAddStudentEmail.getText().toString());
         Log.d("MHCP-MainActivity", "Program Code entered =" + binding.fragmentAddStudentProgram.getText().toString());
 
-
         student = new Student();
-        student.setFName(binding.fragmentAddStudentFirstName.getText().toString());
-        student.setLName(binding.fragmentAddStudentLastName.getText().toString());
-        student.setPNum(binding.fragmentAddStudentPhoneNumber.getText().toString());
-        student.setEMail(binding.fragmentAddStudentEmail.getText().toString());
+        student.setFirstName(binding.fragmentAddStudentFirstName.getText().toString());
+        student.setLastName(binding.fragmentAddStudentLastName.getText().toString());
+        student.setPhoneNumber(binding.fragmentAddStudentPhoneNumber.getText().toString());
+        student.setEmailAddress(binding.fragmentAddStudentEmail.getText().toString());
         int programCode;
         try {
             programCode = Integer.parseInt(binding.fragmentAddStudentProgram.getText().toString());
         } catch (Exception e) {
             programCode = 1;
         }
-        student.setProg(programCode);
+        student.setProgramCode(programCode);
     }
-
 }
